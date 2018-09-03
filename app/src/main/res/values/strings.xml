@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Foursquare</string>
+    <string name="search">Search</string>
+    <string name="please_connect_to_internet">Please connect to internet and retry</string>
+    <string name="no_results_found">No results found</string>
+
+
+    <string name="client_id">4IFI0IOU5UK04IWMATFHK0YWBZYEXF4LKDSPSW3DQKH5C04F</string>
+    <string name="client_secret">XIJ0NZKXIM0VQUQ1SAGBUX2NXPEOCDUX5PXNZK5OCC4DVX0B</string>
+    <string name="api_version">20180903</string>
+</resources>
