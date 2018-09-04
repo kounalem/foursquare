@@ -11,6 +11,8 @@ import com.kounalakis.foursquare.schedulers.SchedulerProvider;
 import com.kounalakis.foursquare.service.FoursquareRetrofitApiService;
 import com.kounalakis.foursquare.service.FoursquareSearchService;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -36,6 +38,7 @@ public class NetModule {
     OkHttpClient provideOkhttpClient(Cache cache) {
         OkHttpClient.Builder client = new OkHttpClient.Builder();
         client.cache(cache);
+        client.connectTimeout(15, TimeUnit.SECONDS);
         return client.build();
     }
 

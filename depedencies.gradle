@@ -10,7 +10,6 @@ ext {
     def version_junit = '4.12'
     def version_mockito = '1.10.19'
     def version_runner = '1.0.2'
-    def version_espresso = '3.0.2'
     def version_robolectric = '3.8'
 
     // ------------------------------------------------------------ LIBS ------------------------------------------------------------
@@ -39,10 +38,9 @@ ext {
     def testLibs = [
             junit           : [group: 'junit', name: 'junit', version: version_junit],
             runner          : [group: 'com.android.support.test', name: 'runner', version: version_runner],
+            rules           : [group: 'com.android.support.test', name: 'rules', version: version_runner],
             mockito         : [group: 'org.mockito', name: 'mockito-core', version: version_mockito],
-            robolectric     : [group: 'org.robolectric', name: 'robolectric', version: version_robolectric],
-            espresso_contrib: [group: 'com.android.support.test.espresso', name: 'espresso-contrib', version: version_espresso],
-            espresso_core   : [group: 'com.android.support.test.espresso', name: 'espresso-core', version: version_espresso],
+            robolectric     : [group: 'org.robolectric', name: 'robolectric', version: version_robolectric]
     ]
 
     // ------------------------------------------------------- DEPENDENCIES -------------------------------------------------------
@@ -74,21 +72,14 @@ ext {
         }
     }
 
-    def espressoTestExclude = {
-        exclude group: 'com.android.support', module: 'appcompat-v7'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'recyclerview-v7'
-    }
-
     testDependencies = [
             [configuration: 'testImplementation', dependency: testLibs.junit],
             [configuration: 'testImplementation', dependency: testLibs.mockito],
             [configuration: 'testImplementation', dependency: testLibs.robolectric, testOptions: robolectricTestExclude],
             [configuration: 'androidTestImplementation', dependency: testLibs.junit],
             [configuration: 'androidTestImplementation', dependency: testLibs.mockito],
-            [configuration: 'androidTestImplementation', dependency: testLibs.espresso_contrib, options: espressoTestExclude],
-            [configuration: 'androidTestImplementation', dependency: testLibs.espresso_core],
-            [configuration: 'androidTestImplementation', dependency: testLibs.runner],
+            [configuration: 'androidTestImplementation', dependency: testLibs.rules],
+            [configuration: 'androidTestImplementation', dependency: testLibs.runner]
     ]
 
 }
