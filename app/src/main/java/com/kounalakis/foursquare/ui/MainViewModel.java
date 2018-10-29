@@ -19,13 +19,10 @@ import io.reactivex.Single;
 public class MainViewModel {
 
     IDataModel dataModel;
-    ISchedulerProvider mSchedulerProvider;
 
     @Inject
-    public MainViewModel(IDataModel dataModel,
-                         ISchedulerProvider schedulerProvider) {
+    public MainViewModel(IDataModel dataModel) {
         this.dataModel = dataModel;
-        this.mSchedulerProvider = schedulerProvider;
     }
 
     @NonNull

@@ -73,7 +73,7 @@ public class NetModule {
 
     @Provides
     @Singleton
-    public MainViewModel provideMainViewModel(IDataModel dataModel, ISchedulerProvider schedulerProvider) {
-        return new MainViewModel(dataModel, schedulerProvider);
+    public MainViewModel provideMainViewModel(IDataModel dataModel) {
+        return new MainViewModel(dataModel);
     }
 }

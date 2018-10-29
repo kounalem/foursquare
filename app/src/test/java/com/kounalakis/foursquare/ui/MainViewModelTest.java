@@ -33,7 +33,7 @@ public class MainViewModelTest {
 
     @Before
     public void setUp() throws Exception {
-        mainViewModel = new MainViewModel(iDataModelMock, iSchedulerProviderMock);
+        mainViewModel = new MainViewModel(iDataModelMock);
     }
 
     @Test

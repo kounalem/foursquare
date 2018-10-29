@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 showLoader();
-                mCompositeDisposable.add(viewModel.getVenues(query.toString())
+                mCompositeDisposable.add(viewModel.getVenues(query)
                         .subscribeOn(schedulerProvider.computation())
                         .observeOn(schedulerProvider.ui())
                         .subscribe(a -> setVenues(a), error -> {
